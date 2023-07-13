@@ -1,6 +1,6 @@
 import 'package:capitals_app/components/appbar_title_widget.dart';
 import 'package:capitals_app/models/questions.dart';
-import 'package:capitals_app/pages/home_page.dart';
+import 'package:capitals_app/pages/start_page.dart';
 import 'package:flutter/material.dart';
 
 import '../components/slider_widget.dart';
@@ -47,8 +47,11 @@ class _TestPageState extends State<TestPage> {
               Row(
                 children: [
                   TextButton(
-                    onPressed: () => Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomePage())),
+                    onPressed: () => Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const StartPage()),
+                        (route) => false),
                     child: const Text('На главную'),
                   ),
                   TextButton(

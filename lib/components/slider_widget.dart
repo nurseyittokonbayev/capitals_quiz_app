@@ -23,7 +23,7 @@ class SliderWidget extends StatelessWidget {
           activeColor: AppColors.active,
           inactiveColor: AppColors.inActive,
           value: value.toDouble(),
-          max: 10,
+          max: 4,
           onChanged: (value) {},
         ),
       ),
