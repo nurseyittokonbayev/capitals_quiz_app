@@ -132,4 +132,15 @@ const answer10 = Questions(
 );
 
 List<Questions> europeQuestions = [answer1, answer2, answer3, answer4, answer5];
-List<Questions> asiaQuestions = [answer6, answer7, answer8, answer9, answer10];
+List<Questions> asiaQuestions = [
+  answer6,
+  answer7,
+  answer8,
+  answer9,
+  answer10,
+  answer6,
+  answer7,
+  answer8,
+  answer9,
+  answer10
+];

@@ -1,13 +1,16 @@
 import 'package:capitals_app/constants/app_colors.dart';
+
 import 'package:flutter/material.dart';
 
 class SliderWidget extends StatelessWidget {
   const SliderWidget({
     super.key,
     required this.value,
+    required this.continetQuestionLength,
   });
 
   final int value;
+  final int continetQuestionLength;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +26,7 @@ class SliderWidget extends StatelessWidget {
           activeColor: AppColors.active,
           inactiveColor: AppColors.inActive,
           value: value.toDouble(),
-          max: 4,
+          max: continetQuestionLength.toDouble(),
           onChanged: (value) {},
         ),
       ),

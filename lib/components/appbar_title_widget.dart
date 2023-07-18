@@ -9,12 +9,14 @@ class AppBarTitleWidget extends StatelessWidget {
     required this.wrongAnswer,
     required this.questionsLength,
     required this.lives,
+    required this.continetQuestionLength,
   });
 
   final int correctAnswer;
   final int wrongAnswer;
   final int questionsLength;
   final int lives;
+  final int continetQuestionLength;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +51,7 @@ class AppBarTitleWidget extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 5),
                   child: Text(
-                    '${europeQuestions.length}',
+                    '$continetQuestionLength',
                     style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w500,

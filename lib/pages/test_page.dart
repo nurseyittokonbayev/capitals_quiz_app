@@ -1,10 +1,10 @@
 import 'package:capitals_app/components/appbar_title_widget.dart';
+import 'package:capitals_app/components/variant_widget.dart';
 import 'package:capitals_app/models/questions.dart';
 import 'package:capitals_app/pages/start_page.dart';
 import 'package:flutter/material.dart';
 
 import '../components/slider_widget.dart';
-import '../components/variant_widget.dart';
 
 class TestPage extends StatefulWidget {
   const TestPage({Key? key, required this.questions}) : super(key: key);
@@ -22,16 +22,14 @@ class _TestPageState extends State<TestPage> {
   int lives = 3;
 
   void checkAnswer(bool isTrue) {
-    if (isTrue) {
-      setState(() {
+    setState(() {
+      if (isTrue) {
         correctAnswer++;
-      });
-    } else {
-      setState(() {
+      } else {
         wrongAnswer++;
         lives--;
-      });
-    }
+      }
+    });
 
     if (index + 1 == widget.questions.length || lives == 0) {
       showDialog(
@@ -48,10 +46,11 @@ class _TestPageState extends State<TestPage> {
                 children: [
                   TextButton(
                     onPressed: () => Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const StartPage()),
-                        (route) => false),
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const StartPage()),
+                      (route) => false,
+                    ),
                     child: const Text('На главную'),
                   ),
                   TextButton(
@@ -92,11 +91,13 @@ class _TestPageState extends State<TestPage> {
           correctAnswer: correctAnswer,
           wrongAnswer: wrongAnswer,
           lives: lives,
+          continetQuestionLength: widget.questions.length,
         ),
       ),
       body: Column(
         children: [
           SliderWidget(
+            continetQuestionLength: widget.questions.length,
             value: index,
           ),
           const SizedBox(height: 30),
@@ -113,15 +114,15 @@ class _TestPageState extends State<TestPage> {
               child: SizedBox(
                 width: double.infinity,
                 child: Image.asset(
-                  'assets/images/asia/seoul.jpg',
+                  'assets/images/${widget.questions[index].image}',
                   fit: BoxFit.fill,
                 ),
               ),
             ),
           ),
           VariantWidget(
-            onTap: checkAnswer,
             answer: widget.questions[index].answers,
+            onTap: checkAnswer,
           ),
         ],
       ),
