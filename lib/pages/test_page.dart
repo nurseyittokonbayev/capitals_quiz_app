@@ -21,7 +21,8 @@ class _TestPageState extends State<TestPage> {
   int wrongAnswer = 0;
   int lives = 3;
 
-  void checkAnswer(bool isTrue) {
+  void checkAnswer(bool isTrue) async {
+    await Future.delayed(const Duration(seconds: 1));
     setState(() {
       if (isTrue) {
         correctAnswer++;
@@ -32,6 +33,7 @@ class _TestPageState extends State<TestPage> {
     });
 
     if (index + 1 == widget.questions.length || lives == 0) {
+      // ignore: use_build_context_synchronously
       showDialog(
         context: context,
         builder: (BuildContext context) {

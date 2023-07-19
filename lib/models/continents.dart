@@ -29,9 +29,11 @@ final asia = Continents(
   questions: asiaQuestions,
 );
 
-const northAmerica = Continents(
+final northAmerica = Continents(
   name: AppText.northAmerica,
   image: 'north_america',
+  audio: 'northAmerica',
+  questions: northAmericaQuestions,
 );
 
 const southAmerica = Continents(

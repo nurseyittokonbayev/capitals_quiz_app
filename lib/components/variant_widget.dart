@@ -1,16 +1,23 @@
 import 'package:capitals_app/models/questions.dart';
 import 'package:flutter/material.dart';
 
-class VariantWidget extends StatelessWidget {
-  const VariantWidget({
-    Key? key,
+class VariantWidget extends StatefulWidget {
+  VariantWidget({
+    super.key,
     required this.answer,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   final List<Answer> answer;
   final Function(bool) onTap;
+  bool? isTrue;
+  bool? isFalse;
 
+  @override
+  State<VariantWidget> createState() => _VariantWidgetState();
+}
+
+class _VariantWidgetState extends State<VariantWidget> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -19,19 +26,27 @@ class VariantWidget extends StatelessWidget {
           crossAxisCount: 2,
           mainAxisExtent: 100,
         ),
-        itemCount: answer.length,
+        itemCount: widget.answer.length,
         itemBuilder: (context, index) {
-          final item = answer[index];
+          final item = widget.answer[index];
 
           return GestureDetector(
             onTap: () {
-              onTap(item.isTrue);
+              widget.onTap(item.isTrue);
+              setState(() {
+                widget.isTrue = true;
+                widget.isFalse = false;
+              });
             },
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: item.isTrue ? Colors.green : Colors.red,
+                  color: item.isTrue == widget.isTrue
+                      ? Colors.green
+                      : item.isTrue == widget.isFalse
+                          ? Colors.red
+                          : Colors.white,
                   borderRadius: BorderRadius.circular(12),
                   boxShadow: [
                     BoxShadow(

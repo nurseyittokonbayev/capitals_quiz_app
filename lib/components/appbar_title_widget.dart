@@ -1,5 +1,5 @@
 import 'package:capitals_app/constants/app_colors.dart';
-import 'package:capitals_app/models/questions.dart';
+
 import 'package:flutter/material.dart';
 
 class AppBarTitleWidget extends StatelessWidget {

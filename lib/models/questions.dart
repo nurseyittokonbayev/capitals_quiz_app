@@ -131,6 +131,80 @@ const answer10 = Questions(
   image: 'asia/ulaanbaatar.jpg',
 );
 
+const answer11 = Questions(
+  text: 'Сент-Джонс',
+  answers: [
+    Answer(text: 'Барбадос'),
+    Answer(text: 'Антигуа и Барбуда', isTrue: true),
+    Answer(text: 'Белиз'),
+    Answer(text: 'Гаити'),
+  ],
+  image: 'northAmerica/AntiguaAndBarbuda.jpg',
+);
+
+const answer12 = Questions(
+  text: 'Бриджтаун',
+  answers: [
+    Answer(text: 'Барбадос', isTrue: true),
+    Answer(
+      text: 'Канада',
+    ),
+    Answer(text: 'Белиз'),
+    Answer(text: 'Гондурас'),
+  ],
+  image: 'northAmerica/Bridgetown.jpg',
+);
+
+const answer13 = Questions(
+  text: 'Порт-о-Пренс',
+  answers: [
+    Answer(text: 'Куба'),
+    Answer(
+      text: 'Коста-Рика',
+    ),
+    Answer(text: 'Гондурас'),
+    Answer(text: 'Гаити', isTrue: true),
+  ],
+  image: 'northAmerica/portOPrens.jpg',
+);
+
+const answer14 = Questions(
+  text: 'Манагуа',
+  answers: [
+    Answer(text: 'Мескика'),
+    Answer(
+      text: 'Панама',
+    ),
+    Answer(text: 'Куба'),
+    Answer(text: 'Никарагуа', isTrue: true),
+  ],
+  image: 'northAmerica/nikaragua.jpg',
+);
+
+const answer15 = Questions(
+  text: 'Гватемала',
+  answers: [
+    Answer(text: 'Гаити'),
+    Answer(
+      text: 'Коста-Рика',
+    ),
+    Answer(text: 'Гватемала', isTrue: true),
+    Answer(text: 'Гондурас'),
+  ],
+  image: 'northAmerica/guatemala.jpg',
+);
+
+const answer16 = Questions(
+  text: 'Оттова',
+  answers: [
+    Answer(text: 'Панама'),
+    Answer(text: 'Канада', isTrue: true),
+    Answer(text: 'Мексика'),
+    Answer(text: 'Куба'),
+  ],
+  image: 'northAmerica/kanada.jpg',
+);
+
 List<Questions> europeQuestions = [answer1, answer2, answer3, answer4, answer5];
 List<Questions> asiaQuestions = [
   answer6,
@@ -138,9 +212,12 @@ List<Questions> asiaQuestions = [
   answer8,
   answer9,
   answer10,
-  answer6,
-  answer7,
-  answer8,
-  answer9,
-  answer10
+];
+List<Questions> northAmericaQuestions = [
+  answer11,
+  answer12,
+  answer13,
+  answer14,
+  answer15,
+  answer16,
 ];

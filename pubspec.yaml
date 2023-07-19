@@ -63,6 +63,7 @@ flutter:
     - assets/images/other/
     - assets/images/europa/
     - assets/images/asia/
+    - assets/images/northAmerica/
     - assets/icons/
     - assets/audio/
 
